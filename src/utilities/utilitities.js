@@ -3,7 +3,6 @@
 
 
 export const converGitHubData = (data) => {
-    console.log("data:", data)
     let nodes = data?.viewer?.repositories?.edges.filter(data => data.node.issues.edges.length > 0)
     .map(data=> data.node.issues.edges).flat().map(node => (node.node));
     let arr = [[{ value: "Repository name" },{value:"Issue link"},
